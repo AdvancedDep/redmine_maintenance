@@ -1,0 +1,11 @@
+# Chinese (China) translations for Ruby on Rails
+zh:
+  setting_tracker_names: "设置查询的跟踪标签（tracker）组合"
+  setting_custom_field_names: "设置查询的项目（Project）自定义字段"
+  query_journal_notes: "更新内容"
+  query_journal_created_on: "更新时间"
+  query_journal_user: "工作人员"
+  siderbar_query_worker: "工作人员"
+  siderbar_query_unit: "用户单位"
+  error_update_failure: "更新设置失败"
+  error_template_format: "上传的模板文件格式错误"

@@ -1,0 +1,14 @@
+<h2><%= l(:label_settings) %>: "任务汇总"</h2>
+
+<div id="settings">
+<% form_tag( { :controller => "maintenance_settings", :action => 'index' }, :method => :post, :multipart => true ) do %>
+<div class="box tabular">
+<%= render :partial => "maintenance_settings/form" %>
+</div>
+<%= submit_tag l(:button_apply) %>
+<% end %>
+</div>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'maintenance/sidebar' %>
+<% end %>

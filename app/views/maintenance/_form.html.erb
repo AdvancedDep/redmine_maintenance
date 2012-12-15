@@ -1,0 +1,38 @@
+<% if @trackers && @trackers.length >= @tracker_names.length %>
+<fieldset class="box" id="tracker_names"><legend><%=l(:label_tracker_plural)%></legend>
+<% @tracker_names.each do |tracker_name| %>
+    <label class="floating">
+    <%= h tracker_name[0] %>
+	<%= select_tag "tracker_names[#{tracker_name[0]}]", 
+			options_for_select(@trackers, :selected => tracker_name[1]), :id => tracker_name[0], :multiple => false %>
+    </label>
+<% end %>
+</fieldset>
+<% else %>
+	<p class="nodata">需要与
+		<% @tracker_names.each do |tracker_name| %>
+			(<%= tracker_name[0] %>)
+		<% end %>
+		对应的<%=@tracker_names.length%>个可用跟踪标签!!
+	</p>
+<% end %>
+
+<% if @issue_custom_fields && @issue_custom_fields.length >= @issue_custom_field_names.length %>
+<fieldset class="box" id="issue_custom_fields"><legend><%=l(:label_custom_field_plural)%></legend>
+<% @issue_custom_field_names.each do |custom_field_name| %>
+	<label class="floating">
+  	<%=h custom_field_name[0] %>
+	<%=select_tag "issue_custom_field_names[#{custom_field_name[0]}]", 
+			options_for_select(@issue_custom_fields, :selected => custom_field_name[1]), :id => custom_field_name[0], :multiple => false %>
+  	</label>
+<% end %>
+</fieldset>
+<% else %>
+	<p class="nodata">
+		需要"<%=l(:field_is_for_all)%>"，"<%=l(:field_is_filter)%>"；"分别与
+			<% @issue_custom_field_names.each do |custom_field_name| %>
+				(<%= custom_field_name[0] %>)
+			<% end %>
+		对应"的自定义字段!!
+	</p>
+<% end %>

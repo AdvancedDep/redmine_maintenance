@@ -1,0 +1,11 @@
+<% @error_hash.each do |error| %>
+	<% case error[0]
+	when "tracker_missing", "custom_field_missing" %>
+		<%= render :partial => "validates/missing", 
+				:locals => { :error_msgs => error[1], :type => error[0].gsub(/\_missing$/, "") } %>
+	<% end %>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'maintenance/sidebar' %>
+<% end %>

@@ -1,0 +1,23 @@
+<h3>任务汇总</h3>
+<%= link_to "配置", { :controller => "maintenance_settings", :action => "index" } %>
+
+<h3>分类查询</h3>
+
+<%= link_to l(:siderbar_query_worker), 
+{ :controller => 'maintenance', :action => 'index', :siderbar_query => 'worker' } %><br />
+<%= link_to l(:siderbar_query_unit), 
+{ :controller => 'maintenance', :action => 'index', :siderbar_query => 'unit' } %><br />
+<%= link_to l(:label_issue_view_all), 
+{ :controller => 'maintenance', :action => 'index', :siderbar_query => 'all' } %>
+
+<h3>模板文件</h3>
+
+"工作人员"的模板：<br/>
+<% unless @worker_attachment.nil? %>
+<%= link_to_template(@worker_attachment) -%><br />
+<% end %>
+
+"用户单位"的模板：<br/>
+<% unless @unit_attachment.nil? %>
+<%= link_to_template(@unit_attachment) -%><br />
+<% end %>

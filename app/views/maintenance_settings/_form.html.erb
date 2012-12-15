@@ -1,0 +1,66 @@
+<% unless @trackers.empty? %> 
+<fieldset class="box" id="tracker_names"><legend><%=l(:label_tracker_plural)%></legend>
+    <%= h l(:setting_tracker_names)%>:
+	<%= select_tag "tracker_names[]", 
+			options_for_select(@trackers, :selected => @tracker_names), :id => "setting_tracker_names", :multiple => true %>
+	<% if @tracker_names.nil? || @tracker_names.empty? %>
+		<font color="red">当前插件没有设置默认查询的跟踪标签</font>
+	<% end %>
+</fieldset>
+<% else %>
+	<p class="nodata">系统中没有可用的跟踪标签（tracker）!!</p>
+<% end %>
+
+<% unless @unit_custom_field.nil? %>
+	<%= hidden_field_tag 'project_custom_field_names[]', @unit_custom_field %>
+	<fieldset class="box" id="project_custom_fields"><legend><%=l(:label_custom_field_plural)%></legend>
+  		<%=h l(:setting_custom_field_names) %>:
+		<%=select_tag "project_custom_field_names[]", 
+				options_for_select(@project_custom_fields, :selected => @project_custom_field_names), :id => "setting_custom_field_names", :multiple => true %>
+		<% if @project_custom_field_names.nil? || @project_custom_field_names.empty? %>
+			<font color="red">当前插件没有设置默认查询的Project自定义字段</font>
+		<% end %>
+		<!-- if @project_custom_fields.empty?
+			<font>系统中没有附加的项目（Project）自定义字段!!</font>
+		end -->
+	</fieldset>
+<% else %>
+	<p class="nodata"><font color="red">系统中没有 "用户单位" 这个项目（Project）自定义字段!!</font></p>
+<% end %>
+
+<fieldset class="box" id="maintenance_templates">
+<% unless @worker_attachment.nil? %>
+	<div class="attachments">
+		"工作人员"的当前的模板文件：<%= link_to_template(@worker_attachment) -%>
+	</div>
+<% end %>
+<% unless @unit_attachment.nil? %>
+	<div class="attachments">
+		"用户单位"的当前的模板文件：<%= link_to_template(@unit_attachment) -%>
+	</div>
+<% end %>
+</fieldset>
+
+<fieldset class="box" id="maintenance_template_worker"><legend>设置"工作人员"所需的模板文件</legend>
+<span id="attachments_fields">
+  <span>
+    <%= file_field_tag 'attachment_worker[1][file]', :size => 30, :id => nil, :class => 'file',
+          :onchange => "checkFileSize(this, #{Setting.attachment_max_size.to_i.kilobytes}, '#{escape_javascript(l(:error_attachment_too_big, :max_size => number_to_human_size(Setting.attachment_max_size.to_i.kilobytes)))}');"  -%>
+  </span>
+</span>
+<small>
+  (<%= l(:label_max_size) %>: <%= number_to_human_size(Setting.attachment_max_size.to_i.kilobytes) %>)
+</small>
+</fieldset>
+
+<fieldset class="box" id="maintenance_template_unit"><legend>设置"用户单位"所需的模板文件</legend>
+<span id="attachments_fields">
+  <span>
+    <%= file_field_tag 'attachment_unit[1][file]', :size => 30, :id => nil, :class => 'file',
+          :onchange => "checkFileSize(this, #{Setting.attachment_max_size.to_i.kilobytes}, '#{escape_javascript(l(:error_attachment_too_big, :max_size => number_to_human_size(Setting.attachment_max_size.to_i.kilobytes)))}');"  -%>
+  </span>
+</span>
+<small>
+  (<%= l(:label_max_size) %>: <%= number_to_human_size(Setting.attachment_max_size.to_i.kilobytes) %>)
+</small>
+</fieldset>

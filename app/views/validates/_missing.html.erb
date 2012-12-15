@@ -1,0 +1,12 @@
+<% if error_msgs.is_a?(Array) %>
+	<% error_msgs.each do |msg| %>
+		<p class="nodata">"<%=msg%>"对应的
+			<% case type
+			when "tracker" %>
+				跟踪标签
+			<% when "custom_field" %>
+				自定义字段
+			<% end %>
+		丢失!!</p>
+	<% end %>
+<% end %>
