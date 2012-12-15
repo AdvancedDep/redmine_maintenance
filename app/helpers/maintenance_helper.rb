@@ -5,7 +5,7 @@ module MaintenanceHelper
     if !params[:siderbar_query].blank?
       @query = QueryJournal.new(:name => "_")
       @query.project = nil
-      
+
       if params[:siderbar_query] == "unit"
         check_tracker_filters(@query)
         check_project_custom_filters(@query)
@@ -28,8 +28,8 @@ module MaintenanceHelper
         else
           session[:template] = { :id => a.id, :type => "worker" }
         end
-      else
-        session[:template] = nil
+      #else
+      #  session[:template] = nil
       end
       
       unless params[:siderbar_query] == "all"
@@ -50,7 +50,7 @@ module MaintenanceHelper
         date_to ||= Date.today.at_beginning_of_month.next_month
         date_from = Date.today.at_beginning_of_month
         @query.add_filter "created_on", "><", [date_from.to_s, date_to.to_s]
-        session[:template] = nil
+        #session[:template] = nil
       end
       
       build_query_from_params

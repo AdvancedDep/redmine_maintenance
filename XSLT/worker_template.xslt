@@ -10,7 +10,7 @@
   <o:SmartTagType o:namespaceuri="urn:schemas-microsoft-com:office:smarttags" o:name="chsdate" />
   <o:DocumentProperties>
     <o:Title>2012</o:Title>
-    <o:Author>制文用户</o:Author>
+    <o:Author>工作任务汇总</o:Author>
     <o:LastAuthor>微软用户</o:LastAuthor>
     <o:Revision>6</o:Revision>
     <o:TotalTime>12</o:TotalTime>
@@ -1343,7 +1343,7 @@
             <w:color w:val="008000" />
             <w:sz w:val="32" />
           </w:rPr>
-          <w:t>工作计划</w:t>
+          <w:t>工作汇总</w:t>
         </w:r>
       </w:p>
       <w:p wsp:rsidR="000A6373" wsp:rsidRDefault="000A6373" wsp:rsidP="000A6373">
@@ -1566,6 +1566,57 @@
                 <!-- the number attribute of number -->
                 <w:t><xsl:value-of select="@number" />.</w:t>
               </w:r>
+				<w:r wsp:rsidR="00176498">
+				  <w:rPr>
+					<w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" w:hint="fareast" />
+					<wx:font wx:val="仿宋_GB2312" />
+					<w:sz w:val="28" />
+					<w:sz-cs w:val="28" />
+				  </w:rPr>
+				  <w:t></w:t>
+				</w:r>
+				<w:r wsp:rsidR="00176498" wsp:rsidRPr="002B1CD1">
+				  <w:rPr>
+					<w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" />
+					<wx:font wx:val="仿宋_GB2312" />
+					<w:b />
+					<w:sz w:val="28" />
+					<w:sz-cs w:val="28" />
+				  </w:rPr>
+				  <w:t><xsl:value-of select="project" /></w:t>
+				</w:r>
+				<w:r wsp:rsidR="00176498" wsp:rsidRPr="002B1CD1">
+				  <w:rPr>
+					<w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" w:hint="fareast" />
+					<wx:font wx:val="仿宋_GB2312" />
+					<w:b />
+					<w:sz w:val="28" />
+					<w:sz-cs w:val="28" />
+				  </w:rPr>
+				  <w:t>-</w:t>
+				</w:r>
+				<w:r wsp:rsidR="00176498" wsp:rsidRPr="002B1CD1">
+				  <w:rPr>
+					<w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" />
+					<wx:font wx:val="仿宋_GB2312" />
+					<w:b />
+					<w:sz w:val="28" />
+					<w:sz-cs w:val="28" />
+				  </w:rPr>
+				  <w:t><xsl:value-of select="issue" /></w:t>
+				</w:r>
+			</w:p>
+			<w:p wsp:rsidR="002E0720" wsp:rsidRDefault="00792188" wsp:rsidP="00B81241">
+				<w:r wsp:rsidR="00176498" wsp:rsidRPr="002B1CD1">
+				  <w:rPr>
+					<w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" w:hint="fareast" />
+					<wx:font wx:val="仿宋_GB2312" />
+					<w:b />
+					<w:sz w:val="28" />
+					<w:sz-cs w:val="28" />
+				  </w:rPr>
+				  <w:t>工作内容：</w:t>
+				</w:r>
               <w:r wsp:rsidR="00792188" wsp:rsidRPr="00302A5C">
                 <w:rPr>
                   <w:rFonts w:ascii="楷体_GB2312" w:fareast="楷体_GB2312" w:hint="fareast" />
@@ -1596,7 +1647,7 @@
                 <w:t><xsl:value-of select="."/></w:t>
               </w:r>
             </w:p>
-            </xsl:for-each>
+            </xsl:for-each><!-- end notes/note -->
             <w:p wsp:rsidR="00792188" wsp:rsidRPr="00302A5C" wsp:rsidRDefault="000F0DED" wsp:rsidP="00B81241">
               <w:pPr>
                 <w:rPr>
@@ -1606,68 +1657,9 @@
                   <w:sz-cs w:val="28" />
                 </w:rPr>
               </w:pPr>
-        <w:r wsp:rsidR="00176498">
-          <w:rPr>
-            <w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" w:hint="fareast" />
-            <wx:font wx:val="仿宋_GB2312" />
-            <w:sz w:val="28" />
-            <w:sz-cs w:val="28" />
-          </w:rPr>
-          <w:t>----</w:t>
-        </w:r>
-        <w:r wsp:rsidR="00176498" wsp:rsidRPr="002B1CD1">
-          <w:rPr>
-            <w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" w:hint="fareast" />
-            <wx:font wx:val="仿宋_GB2312" />
-            <w:b-cs />
-            <w:sz w:val="28" />
-            <w:sz-cs w:val="28" />
-          </w:rPr>
-          <w:t>(</w:t>
-        </w:r>
-        <w:r wsp:rsidR="00176498" wsp:rsidRPr="002B1CD1">
-          <w:rPr>
-            <w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" />
-            <wx:font wx:val="仿宋_GB2312" />
-            <w:b-cs />
-            <w:sz w:val="28" />
-            <w:sz-cs w:val="28" />
-          </w:rPr>
-          <w:t><xsl:value-of select="project" /></w:t>
-        </w:r>
-        <w:r wsp:rsidR="00176498" wsp:rsidRPr="002B1CD1">
-          <w:rPr>
-            <w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" w:hint="fareast" />
-            <wx:font wx:val="仿宋_GB2312" />
-            <w:b-cs />
-            <w:sz w:val="28" />
-            <w:sz-cs w:val="28" />
-          </w:rPr>
-          <w:t>-</w:t>
-        </w:r>
-        <w:r wsp:rsidR="00176498" wsp:rsidRPr="002B1CD1">
-          <w:rPr>
-            <w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" />
-            <wx:font wx:val="仿宋_GB2312" />
-            <w:b-cs />
-            <w:sz w:val="28" />
-            <w:sz-cs w:val="28" />
-          </w:rPr>
-          <w:t><xsl:value-of select="issue" /></w:t>
-        </w:r>
-        <w:r wsp:rsidR="00176498" wsp:rsidRPr="002B1CD1">
-          <w:rPr>
-            <w:rFonts w:ascii="仿宋_GB2312" w:fareast="仿宋_GB2312" w:hint="fareast" />
-            <wx:font wx:val="仿宋_GB2312" />
-            <w:b-cs />
-            <w:sz w:val="28" />
-            <w:sz-cs w:val="28" />
-          </w:rPr>
-          <w:t>)</w:t>
-        </w:r>
             </w:p>
-             </xsl:for-each>
-        </xsl:for-each>
+             </xsl:for-each> <!-- end journal -->
+        </xsl:for-each><!-- end issues/group -->
 			  <!-- there must be a "p" markup before "tc" markup -->
 			<w:p wsp:rsidR="000A6373" wsp:rsidRDefault="000A6373" wsp:rsidP="000A6373" />
           </w:tc>
@@ -1787,7 +1779,7 @@
         <w:docGrid w:type="lines" w:line-pitch="312" />
       </w:sectPr>
     </wx:sect>
-      </xsl:for-each>
+      </xsl:for-each><!-- end query -->
   </w:body>
 </w:wordDocument>
   </xsl:template>
